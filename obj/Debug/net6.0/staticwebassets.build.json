@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "rFKrnYUsbxt8q0S+fiRsylMOBtGwUMcIrY7fX60p5a8=",
+  "Source": "mj-service",
+  "BasePath": "_content/mj-service",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
