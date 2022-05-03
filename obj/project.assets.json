@@ -208,19 +208,19 @@
     ]
   },
   "packageFolders": {
-    "/root/.nuget/packages/": {}
+    "/home/mj/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/root/mj/mj-service/mj-service.csproj",
+      "projectUniqueName": "/home/mj/source/mj-service/mj-service.csproj",
       "projectName": "mj-service",
-      "projectPath": "/root/mj/mj-service/mj-service.csproj",
-      "packagesPath": "/root/.nuget/packages/",
-      "outputPath": "/root/mj/mj-service/obj/",
+      "projectPath": "/home/mj/source/mj-service/mj-service.csproj",
+      "packagesPath": "/home/mj/.nuget/packages/",
+      "outputPath": "/home/mj/source/mj-service/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/root/.nuget/NuGet/NuGet.Config"
+        "/home/mj/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
