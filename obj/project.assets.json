@@ -208,25 +208,35 @@
     ]
   },
   "packageFolders": {
-    "/home/mj/.nuget/packages/": {}
+    "C:\\Users\\ezcaretech.park.b.c\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/mj/source/mj-service/mj-service.csproj",
+      "projectUniqueName": "D:\\project\\mj-service\\mj-service.csproj",
       "projectName": "mj-service",
-      "projectPath": "/home/mj/source/mj-service/mj-service.csproj",
-      "packagesPath": "/home/mj/.nuget/packages/",
-      "outputPath": "/home/mj/source/mj-service/obj/",
+      "projectPath": "D:\\project\\mj-service\\mj-service.csproj",
+      "packagesPath": "C:\\Users\\ezcaretech.park.b.c\\.nuget\\packages\\",
+      "outputPath": "D:\\project\\mj-service\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "/home/mj/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\ezcaretech.park.b.c\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
-        "https://api.nuget.org/v3/index.json": {}
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {},
+        "https://dev-support.cloudnnh.com/nuget": {}
       },
       "frameworks": {
         "net6.0": {
@@ -267,7 +277,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.202/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.203\\RuntimeIdentifierGraph.json"
       }
     }
   }
