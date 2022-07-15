@@ -1,4 +1,7 @@
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
+using Oracle.ManagedDataAccess.Client;
 
 namespace mj_service.Controllers;
 
@@ -18,7 +21,9 @@ public class WeatherForecastController : ControllerBase
         _logger = logger;
     }
 
-    [HttpGet(Name = "GetWeatherForecast")]
+    [HttpGet]
+    // [Authorize]
+    // [EnableCors("MJCorsPolish")]
     public IEnumerable<WeatherForecast> Get()
     {
         return Enumerable.Range(1, 5).Select(index => new WeatherForecast
@@ -28,6 +33,41 @@ public class WeatherForecastController : ControllerBase
             Summary = Summaries[Random.Shared.Next(Summaries.Length)]
         })
         .ToArray();
+    }
+
+
+    [HttpGet("connect")]
+    // [Authorize]
+    // [EnableCors("MJCorsPolish")]
+    public IActionResult ConnectDatabase()
+    {
+        var result = string.Empty;
+        var _host = "adb.ap-seoul-1.oraclecloud.com";
+        var _serviceName = "g4b9432fe3b1aeb_mj_high.adb.oraclecloud.com";
+        var _userId = "oracle";
+        var _passWord = "!Dhfkzmffkdnem1";
+        //var _security = "CN=adb.ap-seoul-1.oraclecloud.com, OU=Oracle ADB SEOUL, O=Oracle Corporation, L=Redwood City, ST=California, C=US";
+        var _connectionString = 
+            //$"Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST={_host})(PORT=1521)))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME={_serviceName}))(security=(ssl_server_cert_dn={_security})));" + 
+            $"Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST={_host})(PORT=1521)))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME={_serviceName})));" + 
+            $"User ID={_userId};Password={_passWord};Connection Timeout=30;";
+        
+        try
+        {
+            var _conn = new OracleConnection(_connectionString);
+            _conn.Open();
+
+            result = "OK";
+        }
+        catch(Exception ex)
+        {
+            result = ex.ToString();
+        }
+        
+
+
+
+        return Ok(result);
     }
 }
 
