@@ -1,34 +1,26 @@
 {
   "format": 1,
   "restore": {
-    "D:\\project\\mj-service\\mj-service.csproj": {}
+    "C:\\projects\\mj-service\\mj-service.csproj": {}
   },
   "projects": {
-    "D:\\project\\mj-service\\mj-service.csproj": {
+    "C:\\projects\\mj-service\\mj-service.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\project\\mj-service\\mj-service.csproj",
+        "projectUniqueName": "C:\\projects\\mj-service\\mj-service.csproj",
         "projectName": "mj-service",
-        "projectPath": "D:\\project\\mj-service\\mj-service.csproj",
-        "packagesPath": "C:\\Users\\ezcaretech.park.b.c\\.nuget\\packages\\",
-        "outputPath": "D:\\project\\mj-service\\obj\\",
+        "projectPath": "C:\\projects\\mj-service\\mj-service.csproj",
+        "packagesPath": "C:\\Users\\park.burn7\\.nuget\\packages\\",
+        "outputPath": "C:\\projects\\mj-service\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\ezcaretech.park.b.c\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\park.burn7\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://dev-support.cloudnnh.com/nuget": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
@@ -46,9 +38,13 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
-            "Oracle.ManagedDataAccess.Core": {
+            "Dapper": {
               "target": "Package",
-              "version": "[3.21.61, )"
+              "version": "[2.0.123, )"
+            },
+            "Mysql.Data": {
+              "target": "Package",
+              "version": "[8.0.29, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
@@ -73,7 +69,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -1,7 +1,9 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
-using Oracle.ManagedDataAccess.Client;
+using Dapper;
+using MySql;
+// using Oracle.ManagedDataAccess.Client;
 
 namespace mj_service.Controllers;
 
@@ -42,27 +44,37 @@ public class WeatherForecastController : ControllerBase
     public IActionResult ConnectDatabase()
     {
         var result = string.Empty;
-        var _host = "adb.ap-seoul-1.oraclecloud.com";
-        var _serviceName = "g4b9432fe3b1aeb_mj_high.adb.oraclecloud.com";
-        var _userId = "oracle";
-        var _passWord = "!Dhfkzmffkdnem1";
-        //var _security = "CN=adb.ap-seoul-1.oraclecloud.com, OU=Oracle ADB SEOUL, O=Oracle Corporation, L=Redwood City, ST=California, C=US";
-        var _connectionString = 
-            //$"Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST={_host})(PORT=1521)))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME={_serviceName}))(security=(ssl_server_cert_dn={_security})));" + 
-            $"Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST={_host})(PORT=1521)))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME={_serviceName})));" + 
-            $"User ID={_userId};Password={_passWord};Connection Timeout=30;";
-        
-        try
-        {
-            var _conn = new OracleConnection(_connectionString);
-            _conn.Open();
+        var _connectionString =  "host=152.70.232.248;port=3306;user id=mj;password=!Dhfkzmffkdnem1;database=mj;";
 
-            result = "OK";
+        using (var connection = new MySql.Data.MySqlClient.MySqlConnection(_connectionString)) {
+
+            connection.Open();
+            
         }
-        catch(Exception ex)
-        {
-            result = ex.ToString();
-        }
+   
+        // var _host = "adb.ap-seoul-1.oraclecloud.com";
+        // var _serviceName = "g4b9432fe3b1aeb_mj_high.adb.oraclecloud.com";
+        // var _userId = "oracle";
+        // var _passWord = "!Dhfkzmffkdnem1";
+        // //var _security = "CN=adb.ap-seoul-1.oraclecloud.com, OU=Oracle ADB SEOUL, O=Oracle Corporation, L=Redwood City, ST=California, C=US";
+        // var _connectionString = 
+        //     //$"Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST={_host})(PORT=1521)))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME={_serviceName}))(security=(ssl_server_cert_dn={_security})));" + 
+        //     $"Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST={_host})(PORT=1521)))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME={_serviceName})));" + 
+        //     $"User ID={_userId};Password={_passWord};Connection Timeout=30;";
+        
+
+        // _connectionString = @"(description= (retry_count=20)(retry_delay=3)(address=(protocol=tcps)(port=1522)(host=adb.ap-seoul-1.oraclecloud.com))(connect_data=(service_name=g4b9432fe3b1aeb_mj_high.adb.oraclecloud.com))(security=(ssl_server_cert_dn=""\CN=adb.ap-seoul-1.oraclecloud.com, OU=Oracle ADB SEOUL, O=Oracle Corporation, L=Redwood City, ST=California, C=US""\)))";
+        // try
+        // {
+        //     var _conn = new OracleConnection(_connectionString);
+        //     _conn.Open();
+
+        //     result = "OK";
+        // }
+        // catch(Exception ex)
+        // {
+        //     result = ex.ToString();
+        // }
         
 
 

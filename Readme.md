@@ -1,5 +1,6 @@
 2022-07-15
-     sudo dotnet add package Oracle.ManagedDataAccess.Core
+     sudo dotnet add package Dapper
+     sudo dotnet add package Mysql.Data
 
 
 
