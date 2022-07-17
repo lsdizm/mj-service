@@ -1,7 +1,10 @@
 2022-07-15
+
      sudo dotnet add package Oracle.ManagedDataAccess.Core
      ORACLE 안쓰고 MariaDB 설치함
 
+     sudo dotnet add package Dapper
+     sudo dotnet add package Mysql.Data
 
 
 (description= (retry_count=20)(retry_delay=3)
