@@ -43,13 +43,16 @@ public class WeatherForecastController : ControllerBase
     // [EnableCors("MJCorsPolish")]
     public IActionResult ConnectDatabase()
     {
-        var result = string.Empty;
+        
         var _connectionString =  "host=152.70.232.248;port=3306;user id=mj;password=!Dhfkzmffkdnem1;database=mj;";
 
-        using (var connection = new MySql.Data.MySqlClient.MySqlConnection(_connectionString)) {
+        using (var connection = new MySql.Data.MySqlClient.MySqlConnection(_connectionString)) 
+        {
 
             connection.Open();
-            
+            var result = Dapper.SqlMapper.Query(connection, "select * from SCHEDULER_LOG");
+
+            return Ok(result);
         }
    
         // var _host = "adb.ap-seoul-1.oraclecloud.com";
@@ -78,8 +81,6 @@ public class WeatherForecastController : ControllerBase
         
 
 
-
-        return Ok(result);
     }
 }
 
