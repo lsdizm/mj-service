@@ -1,5 +1,6 @@
 2022-07-15
      sudo dotnet add package Oracle.ManagedDataAccess.Core
+     ORACLE 안쓰고 MariaDB 설치함
 
 
 
