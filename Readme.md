@@ -11,6 +11,11 @@
 
      serverice 만들어서 실행
 
+     sudo cp mj-service.service /etc/systemd/system/mj-service.service
+     sudo systemctl start mj-service.service
+     sudo systemctl stop mj-service.service
+     sudo systemctl status mj-service.service
+
 
 (description= (retry_count=20)(retry_delay=3)
 (address=(protocol=tcps)(port=1522)(host=adb.ap-seoul-1.oraclecloud.com))
