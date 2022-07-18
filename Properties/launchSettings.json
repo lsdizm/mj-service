@@ -9,7 +9,7 @@
     }
   },
   "profiles": {
-    "manji": {
+    "mj": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,

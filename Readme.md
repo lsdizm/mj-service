@@ -7,6 +7,11 @@
      sudo dotnet add package Mysql.Data
 
 
+     sudo dotnet publish -c Release
+
+     serverice 만들어서 실행
+
+
 (description= (retry_count=20)(retry_delay=3)
 (address=(protocol=tcps)(port=1522)(host=adb.ap-seoul-1.oraclecloud.com))
 (connect_data=(service_name=g4b9432fe3b1aeb_mj_high.adb.oraclecloud.com))

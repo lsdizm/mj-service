@@ -1,0 +1,17 @@
+[Unit]
+Description=" dotnet 자동 실행 서비스 : /etc/systemd/system 폴더로 복사"
+
+[Service]
+WorkingDirectory=/home/opc/mj-service/bin/Release/net6.0/publish
+ExecStart=/usr/bin/dotnet /home/opc/mj-service/bin/Release/net6.0/publish/mj-service.dll
+Restart=always
+# Restart service after 10 seconds if the dotnet service crashes:
+RestartSec=10
+KillSignal=SIGINT
+SyslogIdentifier=dotnet-example
+User=www-data
+Environment=ASPNETCORE_ENVIRONMENT=Production
+Environment=DOTNET_PRINT_TELEMETRY_MESSAGE=false
+
+[Install]
+WantedBy=multi-user.target
