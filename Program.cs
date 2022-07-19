@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.HttpOverrides;
-using mj_service.Services;
+using mj_service.Connects;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,6 +17,9 @@ builder.WebHost.ConfigureKestrel(serverOptions =>
     });
 });
 
+
+builder.Services.AddScoped<IDataBases, DataBases>();
+
 var app = builder.Build();
 
 app.UseSwagger();
@@ -29,9 +32,5 @@ app.UseForwardedHeaders(new ForwardedHeadersOptions
 {
     ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
 });
-
-var scheduler = new SchedulerService();
-scheduler.Start();
-//await scheduler.Execute().ConfigureAwait(false);
 
 app.Run();

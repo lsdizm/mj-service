@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
+using mj_service.Connects;
 using Dapper;
 using MySql;
 
@@ -9,18 +10,18 @@ namespace mj_service.Controllers;
 [ApiController]
 public class QueryController : ControllerBase
 {
-    public QueryController()
+    private readonly IDataBases _databases;
+    public QueryController(IDataBases databases)
     {
+        _databases = databases;
     }
 
     [HttpGet("queries/{id}")]
     public async Task<IActionResult> GetQuery(string id)
     {
-        var _connectionString =  "host=152.70.232.248;port=3306;user id=mj;password=!Dhfkzmffkdnem1;database=mj;";
-
-        using (var connection = new MySql.Data.MySqlClient.MySqlConnection(_connectionString)) 
+        using (var connection = _databases.Connect()) 
         {
-            connection.Open();
+            await connection.OpenAsync().ConfigureAwait(false);            
             var sql = await Dapper.SqlMapper.QueryFirstAsync<string>(connection, $"select SQL_CONTENT from SQL_STORAGE where id = '{id}'").ConfigureAwait(false);
 
             if (!string.IsNullOrWhiteSpace(sql)) {
