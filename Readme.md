@@ -12,7 +12,9 @@
      serverice 만들어서 실행
 
      sudo cp mj-service.service /etc/systemd/system/mj-service.service
+     
      sudo systemctl daemon-reload
+     sudo systemctl enable mj-service.service
      sudo systemctl start mj-service.service
      sudo systemctl stop mj-service.service
      sudo systemctl status mj-service.service
