@@ -18,6 +18,8 @@ builder.WebHost.ConfigureKestrel(serverOptions =>
 });
 
 
+
+
 builder.Services.AddScoped<IDataBases, DataBases>();
 
 var app = builder.Build();
@@ -25,8 +27,10 @@ var app = builder.Build();
 app.UseSwagger();
 app.UseSwaggerUI();
 app.UseHttpsRedirection();
+app.UseCertificateForwarding();
 app.UseAuthorization();
 app.MapControllers();
+
 
 app.UseForwardedHeaders(new ForwardedHeadersOptions 
 {
